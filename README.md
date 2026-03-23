@@ -57,15 +57,7 @@ The project follows a Medallion Architecture:
 - Data cleaning:
   - Removes invalid rows (e.g., missing IDs, invalid quantities)  
   - Standardizes formats (dates, text fields)  
-  - Filters invalid business cases (e.g., store_id = 0)  
-
-- Normalization:
-  - Splits data into structured tables:
-    - customers  
-    - products  
-    - stores  
-    - orders  
-    - order_items  
+  - Filters invalid business cases (e.g., type = unknown)  
 
 - Output tables:
   - slv_customers  
@@ -110,11 +102,6 @@ The pipeline is orchestrated using Microsoft Fabric Data Factory. The notebooks 
 3. Gold Notebook  
 4. Analytics Notebook  
 
-Features:
-- One-click execution  
-- Scheduled runs  
-- Monitoring and logging  
-
 ---
 
 ## Pipeline Execution
@@ -131,11 +118,6 @@ Several business questions are answered using SQL:
 - Customer segmentation (High / Mid / Low value using NTILE)  
 - Frequently bought product pairs  
 - Share of customers ordering in multiple quarters  
-
-Techniques used:
-- Window functions  
-- Aggregations  
-- Self-joins  
 
 ---
 
@@ -159,11 +141,6 @@ Relationships:
 
 ![Power BI](powerbi/dashboard_preview.png)
 
-Visualizations include:
-- Revenue by region  
-- Profit over time  
-- Product performance  
-- Customer segmentation  
 
 ---
 
